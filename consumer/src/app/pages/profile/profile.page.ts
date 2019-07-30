@@ -3,12 +3,15 @@ import { UserService } from '../../shared/services/user.service';
 import { AuthService } from '../../shared/services/auth.service';
 import { NavController } from '@ionic/angular';
 
+import { User } from './../../shared/models/user';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+
 
   public firstName: string;
   public lastName: string;
@@ -35,4 +38,5 @@ export class ProfilePage implements OnInit {
     // This should navigate to the register page:
     this.navCtrl.navigateBack('home');
   }
+  
 }
