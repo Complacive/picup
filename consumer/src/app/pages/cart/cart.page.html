@@ -11,11 +11,13 @@
 
 <ion-content>
     <ion-list *ngIf="resultCart">
-        <ion-item *ngFor="let item of resultCart; index as i"></ion-item>
-        <ion-label text-wrap>
-            <h3>item[i][0]</h3>
-            {{item[i][0]}}
-        </ion-label>
+        <ion-item *ngFor="let item of resultCart">
+            <ion-label text-wrap>
+                <h3>{{item.item_name}}</h3>
+                {{item.total_price}}
+            </ion-label>
+        </ion-item>
+
     </ion-list>
     <div>Total: </div>
 </ion-content>
