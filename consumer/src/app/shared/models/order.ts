@@ -8,9 +8,10 @@ export class Order {
     private merchant_id: number;
     private parcel_size: string;
     private num_parcels: number;
+    public status: string;
 
     constructor (id, is_round_trip, date_created, date_scheduled, 
-                 user_id, merchant_id, parcel_size, num_parcels) {
+                 user_id, merchant_id, parcel_size, num_parcels, status) {
         this.id = id;
         this.is_round_trip = is_round_trip;
         this.date_created = date_created;
@@ -19,6 +20,7 @@ export class Order {
         this.merchant_id = merchant_id;
         this.parcel_size = parcel_size;
         this.num_parcels = num_parcels;
+        this.status = status;
     }
 
     public get_order_id(): number {

@@ -43,13 +43,7 @@ export class LoginPage implements OnInit {
     this.authService.login(authUser).then(res => {
       const testId = localStorage.getItem('userId');
       console.log(testId);
-
-      this.navCtrl.navigateForward('home', {
-        queryParams:  {
-          user: res
-        }
-      });
-
+      this.navCtrl.navigateForward('home');
     }).catch (err => {
       this.presentAlert(err);
     });
