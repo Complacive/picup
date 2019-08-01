@@ -11,6 +11,7 @@
 
 
 <ion-content>
+<<<<<<< HEAD
     <ion-grid>
     <ion-row>
         <ion-col size-md="6" offset-md="3">
@@ -36,3 +37,17 @@
     </ion-grid>
 </ion-content>
 
+=======
+    <ion-list *ngIf="resultCart">
+        <ion-item button *ngFor="let item of resultCart" [routerLink]=" ['/', 'cart', item._id]">
+            <ion-label text-wrap>
+                <h3>{{item.item_name}}</h3>
+                {{item.total_price}}
+            </ion-label>
+            <h2>{{item.quantity}}</h2>
+        </ion-item>
+
+    </ion-list>
+    <div>Total: R{{totalPrice}}</div>
+</ion-content>
+>>>>>>> c122f958f60bf1ea9682c0926dc683bf9097d145

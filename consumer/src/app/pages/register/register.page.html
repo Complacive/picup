@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-title>Registration</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<<<<<<< HEAD
     <ion-grid>
         <ion-row>
           <ion-col size-md="6" offset-md="3">
@@ -15,3 +16,51 @@
           </ion-row>
       </ion-grid>
 </ion-content>
+=======
+
+  <div class="ion-padding">
+
+    <ion-item>
+      <ion-label position="stacked">First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="newUser.firstName"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="newUser.lastName"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="text" [(ngModel)]="newUser.email"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="text" [(ngModel)]="newUser.password"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Cell Phone</ion-label>
+      <ion-input type="text" [(ngModel)]="newUser.cell_phone"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-input type="text" [(ngModel)]="newUser.address"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Delivery Instructions</ion-label>
+      <ion-input type="text" [(ngModel)]="newUser.instruction"> </ion-input>
+    </ion-item>
+
+    <div align='center'>
+      <ion-button color="danger" (click)="registerUser()">Create Account</ion-button>
+    </div>
+    <div align='center'>
+      <ion-button color="danger" (click)="navToLogin()">Back To Login</ion-button>
+    </div>
+  </div>
+</ion-content>
+>>>>>>> c122f958f60bf1ea9682c0926dc683bf9097d145

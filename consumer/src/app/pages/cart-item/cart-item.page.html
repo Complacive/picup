@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-content *ngIf="productInfo">
+            <ion-img [src]="productInfo.image"></ion-img>
+            <div>{{productInfo.name}}</div>
+            <ion-label> {{productInfo.price}} </ion-label>
+
+            <div>
+                <ion-label>Quantity</ion-label>
+                <div slot="end" class="ion-text-center">
+                    <ion-button>
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                    </ion-button>
+                    <ion-label>1</ion-label>
+                    <ion-button>
+                        <ion-icon name="remove-circle"></ion-icon>
+                    </ion-button>
+                </div>
+            </div>
+            <ion-button expand="full">Add to cart</ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
