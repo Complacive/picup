@@ -3,18 +3,19 @@ import { Cart } from './cart';
 export class User {
 
     private id: number;
-    private name: string;
+    public firstName: string;
+    public lastName: string;
     private email: string;
     private password: string;
-    private cell_phone_number: string;
+    private cell_phone: string;
     private address: string;
-    private instructions; string;
-    private new_user: boolean;
-    private past_orders: number[];
-    private pending_orders: number[];
+    private instruction: string;
+    private new_user: string;
+    // private past_orders: number[];
+    // private pending_orders: number[];
 
 
-    private cart: Cart = null;
+    // private cart: Cart = null;
 
     /*
     constructor(id, name, email, password,
@@ -36,8 +37,12 @@ export class User {
 
     //setter methods
 
-    public set_name(name: string) {
-        this.name = name;
+    public set_firstName(firstName: string) {
+        this.firstName = firstName;
+    }
+
+    public set_lastName(lastName: string) {
+        this.lastName = lastName;
     }
 
     public set_email(email: string) {
@@ -48,16 +53,20 @@ export class User {
         this.password = password;
     }
 
-    public set_cell_phone_number(cell_phone_number: string) {
-        this.cell_phone_number = cell_phone_number;
+    public set_cell_phone_number(cell_phone: string) {
+        this.cell_phone = cell_phone;
     }
 
     public set_address(address: string) {
         this.address = address;
     }
 
-    public set_instructions(instructions: string) {
-        this.instructions = instructions;
+    public set_instruction(instruction: string) {
+        this.instruction = instruction;
+    }
+
+    public set_new_user(new_user: string) {
+        this.new_user = new_user;
     }
 
     //getter methods
@@ -66,8 +75,12 @@ export class User {
         return this.id;
     }
 
-    public get_name(): string {
-        return this.name;
+    public get_firstName(): string {
+        return this.firstName;
+    }
+
+    public get_lastName(): string {
+        return this.lastName;
     }
 
     public get_email(): string {
@@ -78,21 +91,22 @@ export class User {
     }
 
     public get_cell_phone_number(): string {
-        return this.cell_phone_number;
+        return this.cell_phone;
     }
     
     public get_address(): string {
         return this.address;
     }
 
-    public get_instructions(): string {
-        return this.instructions;
+    public get_instruction(): string {
+        return this.instruction;
     }
 
-    public is_new_user(): boolean {
+    public is_new_user(): string {
         return this.new_user;
     }
 
+    /*
     public get_past_orders(): number[] {
         return this.past_orders;
     }
@@ -100,5 +114,6 @@ export class User {
     public get_pending_orders(): number[] {
         return this.pending_orders;
     }
+    */
 
 }

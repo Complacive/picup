@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/services/user.service';
-import { AuthService } from '../../shared/services/auth.service';
-import { NavController } from '@ionic/angular';
-
 import { User } from './../../shared/models/user';
 
 @Component({
@@ -12,31 +9,19 @@ import { User } from './../../shared/models/user';
 })
 export class ProfilePage implements OnInit {
 
-
-  public firstName: string;
-  public lastName: string;
-  public email: string;
-  public user: any;
+  public authUser = new User();
 
   constructor(
     private userService: UserService,
-    private authService: AuthService,
-    private navCtrl: NavController,
   ) { }
 
   ngOnInit() {
-    this.userService.getUserById(+localStorage.getItem('userId')).then((response: any ) => {
-      this.firstName = response[0].firstName;
-      this.lastName = response[0].lastName;
-      this.email = response[0].email;
+    this.userService.getById(+localStorage.getItem('userId')).then((response: any) => {
+      this.authUser = response[0];
+      console.log(this.authUser);
     }).catch((err: any) => {
       console.log(err);
     })
   }
 
-  backHome() {
-    // This should navigate to the register page:
-    this.navCtrl.navigateBack('home');
-  }
-  
 }
