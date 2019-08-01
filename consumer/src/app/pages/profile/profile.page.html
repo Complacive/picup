@@ -10,13 +10,20 @@
 </ion-header>
   
   <ion-content>
-    <ion-avatar>
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-  
-    <p>First Name: {{firstName}}</p>
-    <p>Last Name: {{lastName}}</p>
-    <p>Email: {{email}}</p>
-    
-    <ion-button size="medium" expand="block" (click)="backHome()">Back</ion-button>
+      <ion-grid>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              
+                <ion-avatar>
+                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                  </ion-avatar>
+                
+                  <p>First Name: {{firstName}}</p>
+                  <p>Last Name: {{lastName}}</p>
+                  <p>Email: {{email}}</p>
+                  
+                  <ion-button size="medium" expand="block" (click)="backHome()">Back</ion-button>                
+              </ion-col>
+            </ion-row>
+        </ion-grid>
   </ion-content>
