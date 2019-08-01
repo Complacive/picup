@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'checkout', loadChildren: './pages/checkout/checkout.module#CheckoutPageModule' },
   { path: 'orders', loadChildren: './pages/orders/orders.module#OrdersPageModule' },
   { path: 'product-info', loadChildren: './pages/product-info/product-info.module#ProductInfoPageModule' },
+  { path: 'cart/:cartId', loadChildren: './pages/cart-item/cart-item.module#CartItemPageModule' },
+
 
 ];
 

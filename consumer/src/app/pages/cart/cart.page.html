@@ -11,13 +11,14 @@
 
 <ion-content>
     <ion-list *ngIf="resultCart">
-        <ion-item *ngFor="let item of resultCart">
+        <ion-item button *ngFor="let item of resultCart" [routerLink]=" ['/', 'cart', item._id]">
             <ion-label text-wrap>
                 <h3>{{item.item_name}}</h3>
                 {{item.total_price}}
             </ion-label>
+            <h2>{{item.quantity}}</h2>
         </ion-item>
 
     </ion-list>
-    <div>Total: </div>
+    <div>Total: R{{totalPrice}}</div>
 </ion-content>
