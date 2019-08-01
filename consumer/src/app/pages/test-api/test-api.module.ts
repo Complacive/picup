@@ -5,17 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { OrdersPageRoutingModule } from './orders.router.module';
+import { TestAPIPage } from './test-api.page';
 
-import { OrdersPage } from './orders.page';
+const routes: Routes = [
+  {
+    path: '',
+    component: TestAPIPage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OrdersPageRoutingModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [OrdersPage]
+  declarations: [TestAPIPage]
 })
-export class OrdersPageModule {}
+export class TestAPIPageModule {}
