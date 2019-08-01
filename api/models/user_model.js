@@ -61,21 +61,31 @@ module.exports = class User {
         });
     };
 
-    // not working
-    updateById(user, userId) {
+    updateById(userId, user) {
         return new Promise((resolve, reject) => {
-            mysqlConn.query(
-                "UPDATE user SET user = ? WHERE id = ?", [user, userId],
-                function(err, res) {
-                    if (err) {
-                        reject(err);
-                    } else {
-                        resolve(res);
-                    }
-                }
-            );
+          mysqlConn.query(
+            "UPDATE user SET firstName = ?, lastName = ?, email = ?, address = ?, cell_phone = ?, instruction = ?, password = ?, new_user = ?, WHERE id = ?",
+            [
+              user.firstName,
+              user.lastName,
+              user.email,
+              user.address,
+              user.cell_phone,
+              user.instruction,
+              user.password, 
+              user.new_user,
+              userId
+            ],
+            function (err, res) {
+              if (err) {
+                reject(err);
+              } else {
+                resolve(res);
+              }
+            }
+          );
         });
-    };
+      };
 
     removeById(userId) {
         return new Promise((resolve, reject) => {
