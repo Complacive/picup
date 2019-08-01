@@ -4,11 +4,11 @@ import { UserService } from '../../shared/services/user.service';
 import { User } from './../../shared/models/user';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-edit-profile',
+  templateUrl: './edit-profile.page.html',
+  styleUrls: ['./edit-profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class EditProfilePage implements OnInit {
 
   public authUser = new User();
 
@@ -26,8 +26,16 @@ export class ProfilePage implements OnInit {
     })
   }
 
-  navToEditProfile() {
-    this.navCtrl.navigateForward("edit-profile");
+  updateProfile() {
+    this.userService.updateById(this.authUser).then((response : any) => {
+      this.navCtrl.navigateRoot('home');
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
+  navBackToProfile() {
+    this.navCtrl.navigateBack('profile');
   }
 
 }
