@@ -37,11 +37,11 @@ router.post('/getById', function (req, res) {
         });
 });
 
-router.post('/updateById', function (req, res) {
+router.patch('/updateById', function (req, res) {
     User.prototype
-        .updateById(req.body.id)
-        .then(users => {
-            res.send(users);
+        .updateById(req.body.id, req.body)
+        .then(user => {
+            res.send(user);
         })
         .catch(err => {
             res.status(400).send(err);
