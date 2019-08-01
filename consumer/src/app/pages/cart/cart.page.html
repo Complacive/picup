@@ -10,18 +10,15 @@
 </ion-header>
 
 <ion-content>
-    <ion-card>
-        <ion-card-content>
-            <div class="card_content">
-                <ion-thumbnail slot="start">
-                    <ion-img src='https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-1/135/_Canister_Egg-256.png'></ion-img>
-                </ion-thumbnail>
-                <div>
-                    <ion-label>Price</ion-label>
-                </div>
+    <ion-list *ngIf="resultCart">
+        <ion-item button *ngFor="let item of resultCart" [routerLink]=" ['/', 'cart', item._id]">
+            <ion-label text-wrap>
+                <h3>{{item.item_name}}</h3>
+                {{item.total_price}}
+            </ion-label>
+            <h2>{{item.quantity}}</h2>
+        </ion-item>
 
-            </div>
-
-        </ion-card-content>
-    </ion-card>
+    </ion-list>
+    <div>Total: R{{totalPrice}}</div>
 </ion-content>
