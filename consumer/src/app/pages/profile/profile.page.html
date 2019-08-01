@@ -1,24 +1,40 @@
 <ion-header>
   <ion-toolbar>
+
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Profile
-    </ion-title>
+
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-avatar>
-    <img src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-1/135/_Canister_Egg-256.png">
-  </ion-avatar>
 
-  <p>First Name: {{authUser.firstName}}</p>
-  <p>Last Name: {{authUser.lastName}}</p>
-  <p>Email: {{authUser.email}}</p>
-  <p>Address: {{authUser.address}}</p>
-  <p>Cell Phone: {{authUser.cell_phone}}</p>
-  <p>Delivery Instructions: {{authUser.instruction}}</p>
 
-</ion-content>
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>{{firstName}}</ion-title>
+    </ion-toolbar>
+  </ion-header>,
+  <ion-content fullscreen>
+    <ion-card>
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+      </ion-avatar>
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>Profile</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>First Name: {{firstName}}</p>
+        <p>Last Name: {{lastName}}</p>
+        <p>Email: {{email}}</p>
+        <p> Shiping address: {{Address}}</p>
+        <p>Phone Number : {{CellNumber}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  <ion-button size="medium" expand="block" (click)="Edit()">Edit</ion-button>
+</ion-app>
+
