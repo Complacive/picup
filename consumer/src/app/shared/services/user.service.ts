@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { User } from '../models/user'
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,21 @@ export class UserService {
         )
     });
   }
+
+  updateById(user: User) {
+    return new Promise((resolve, reject) => {
+      this.httpClient
+        .patch('http://localhost:5000/api/user/updateById', user)
+        .subscribe(
+          (response) => {
+            resolve(response);
+          },
+          (err) => {
+            reject(err);
+          }
+        )
+    });
+  }
+
 
 }
