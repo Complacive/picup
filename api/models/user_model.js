@@ -1,13 +1,5 @@
 const mysqlConn = require('../database/database');
 
-fs = require('fs');
-
-const roles = {
-    ADMIN: "admin",
-    PROVIDER: "provider",
-    USER: "user",
-};
-
 module.exports = class User {
 
   constructor(newId, newFirstName, newLastName, newEmail, newPassword, newCellPhone, newInstruction) {

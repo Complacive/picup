@@ -1,6 +1,4 @@
 const mysqlConn = require('../database/database');
-const merchant_data = require('../data/merchant_data.json');
-fs = require('fs');
 
 module.exports = class Merchant {
 
@@ -12,6 +10,78 @@ module.exports = class Merchant {
         this.email = email;
     }
 
+    get() {
+        return new Promise((resolve, reject) => {
+            mysqlConn.query("SELECT * FROM merchant", (err, res) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(res);
+                }
+            });
+        });
+    };
+
+    create(newMerchant) {
+        return new Promise((resolve, reject) => {
+            mysqlConn.query("INSERT INTO merchant set ?", newMerchant, function (err, res) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(res.insertId);
+                }
+            });
+        });
+    };
+
+    getById(merchantId) {
+        return new Promise((resolve, reject) => {
+            mysqlConn.query("Select * from merchant where id = ? ", merchantId, function (
+                err,
+                res
+            ) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(res);
+                }
+            });
+        });
+    };
+
+    updateById(merchantId, merchant) {
+        return new Promise((resolve, reject) => {
+            mysqlConn.query(
+                "UPDATE merchant SET name = ?, address = ?, cell_phone = ?, email = ?, instruction = ? WHERE id = ?",
+                [merchant.name,
+                    merchant.address,
+                    merchant.cell_phone,
+                    merchant.email,
+                    merchant.instruction,
+                    merchantId
+                ],
+                function (err, res) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(res);
+                    }
+                }
+            );
+        });
+    };
+
+    removeById(merchantId) {
+        return new Promise((resolve, reject) => {
+            mysqlConn.query("DELETE FROM merchant WHERE id = ?", merchantId, function (err, res) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(res);
+                }
+            });
+        });
+    };
 
 
 }
