@@ -1,13 +1,5 @@
 const mysqlConn = require('../database/database');
 
-fs = require('fs');
-
-const roles = {
-    ADMIN: "admin",
-    PROVIDER: "provider",
-    USER: "user",
-};
-
 module.exports = class User {
 
   constructor(newId, newFirstName, newLastName, newEmail, newPassword, newCellPhone, newInstruction) {
@@ -63,29 +55,30 @@ module.exports = class User {
 
     updateById(userId, user) {
         return new Promise((resolve, reject) => {
-          mysqlConn.query(
-            "UPDATE user SET firstName = ?, lastName = ?, email = ?, address = ?, cell_phone = ?, instruction = ?, password = ?, new_user = ?, WHERE id = ?",
-            [
-              user.firstName,
-              user.lastName,
-              user.email,
-              user.address,
-              user.cell_phone,
-              user.instruction,
-              user.password, 
-              user.new_user,
-              userId
-            ],
-            function (err, res) {
-              if (err) {
-                reject(err);
-              } else {
-                resolve(res);
-              }
-            }
-          );
+            mysqlConn.query(
+                "UPDATE user SET firstName = ?, lastName = ?, email = ?, address = ?, cell_phone = ?, instruction = ?, password = ?, new_user = ? WHERE id = ?", 
+                [user.firstName,
+                 user.lastName,
+                 user.email,
+                 user.address,
+                 user.cell_phone,
+                 user.instruction,
+                 user.password,
+                 user.new_user,
+                 userId
+                ],
+                function(err, res) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(res);
+                    }
+                }
+            );
         });
       };
+
+    
 
     removeById(userId) {
         return new Promise((resolve, reject) => {

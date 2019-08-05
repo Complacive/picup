@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'product-info', loadChildren: './pages/product-info/product-info.module#ProductInfoPageModule' },
   { path: 'test-api', loadChildren: './pages/test-api/test-api.module#TestAPIPageModule' },
   { path: 'cart/:cartId', loadChildren: './pages/cart-item/cart-item.module#CartItemPageModule' },
+  { path: 'edit-profile', loadChildren: './pages/edit-profile/edit-profile.module#EditProfilePageModule' },
 
 ];
 

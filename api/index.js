@@ -20,7 +20,7 @@ app.use("/api/user", require("./routes/user_route"));
 app.use("/api/auth", require('./routes/auth_routes'));
 app.use("/api/product", require('./routes/product_routes'));
 app.use("/api/merchant", require('./routes/merchant_routes'));
-//app.use("/api/order", require('./routes/order_routes'));
+app.use("/api/order", require('./routes/order_routes'));
 //app.use("/api/checkout", require('./routes/checkout_routes'));
 
 const PORT = process.env.PORT || 5000;
