@@ -1,64 +1,45 @@
-<ion-header>
-  <ion-toolbar>
 
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+  <ion-header>
+      <ion-toolbar>
+        <ion-title>Profile</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-    <ion-title>Profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-  
-  <ion-content>
-      <ion-grid>
-          <ion-row>
-            <ion-col size-md="6" offset-md="3">
-              
-                <ion-avatar>
-                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-                  </ion-avatar>
-                
-                  <p>First Name: {{firstName}}</p>
-                  <p>Last Name: {{lastName}}</p>
-                  <p>Email: {{email}}</p>
-                  
-                  <ion-button size="medium" expand="block" (click)="backHome()">Back</ion-button>                
-              </ion-col>
-            </ion-row>
-        </ion-grid>
-  </ion-content>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
 
+        <ion-avatar margin>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+        </ion-avatar>
 
+      </ion-col>
+    </ion-row>
 
-<<<<<<< HEAD
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+
+        <ion-item>
+          <p>First Name: {{authUser.firstName}}</p>
+        </ion-item>
+        <ion-item>
+          <p>Last Name: {{authUser.lastName}}</p>
+        </ion-item>
+        <ion-item>
+          <p>Email: {{authUser.email}}</p>
+        </ion-item>
+        <ion-item>
+          <p>Shiping address: {{authUser.address}}</p>
+        </ion-item>
+        <ion-item>
+          <p>Phone Number : {{authUser.cell_phone}}</p>
+        </ion-item>
+
+        <ion-button fill="outline" size="medium" expand="block" (click)="navToEditProfile()">Edit Profile</ion-button>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>
-=======
-<ion-app>
-  <ion-header translucent>
-    <ion-toolbar>
-      <ion-title>{{authUser.firstName}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content fullscreen>
-    <ion-card>
-      <ion-avatar>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-      </ion-avatar>
-      <ion-card-header>
-        <ion-card-title>Profile</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>First Name: {{authUser.firstName}}</p>
-        <p>Last Name: {{authUser.lastName}}</p>
-        <p>Email: {{authUser.email}}</p>
-        <p>Shiping address: {{authUser.address}}</p>
-        <p>Phone Number : {{authUser.cell_phone}}</p>
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
-
-  <ion-button size="medium" expand="block" (click)="navToEditProfile()">Edit Profile</ion-button>
-</ion-app>
-
->>>>>>> 4db6d0a37dabe74cd5a39db21bec48ed9cc40ac3

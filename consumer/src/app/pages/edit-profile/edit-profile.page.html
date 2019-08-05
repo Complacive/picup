@@ -4,40 +4,49 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-
-  <b>Update Information</b>
-  <ion-item>
-    <ion-label position="stacked">Email</ion-label>
-    <ion-input type="text" [(ngModel)]="authUser.email"> </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="stacked">Address</ion-label>
-    <ion-input type="text" [(ngModel)]="authUser.address"> </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="stacked">Cell Phone</ion-label>
-    <ion-input type="text" [(ngModel)]="authUser.cell_phone"> </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="stacked">Delivery Instruction</ion-label>
-    <ion-input type="text" [(ngModel)]="authUser.instruction"> </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="stacked">Password</ion-label>
-    <ion-input type="password"  [(ngModel)]="authUser.password"> </ion-input>
-  </ion-item>
-
-  <div align='center'>
-    <ion-button color="danger" (click)="updateProfile()">Update Profile</ion-button>
-  </div>
-  
-  <div align='center'>
-    <ion-button color="danger" (click)="navBackToProfile()">Back to Profile</ion-button>
-  </div>
-
+  <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+          
+          <ion-item>  <h1>Information</h1></ion-item>
+         
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input type="text" [(ngModel)]="authUser.email"> </ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label position="stacked">Address</ion-label>
+            <ion-input type="text" [(ngModel)]="authUser.address"> </ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label position="stacked">Cell Phone</ion-label>
+            <ion-input type="text" [(ngModel)]="authUser.cell_phone"> </ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label position="stacked">Delivery Instruction</ion-label>
+            <ion-input type="text" [(ngModel)]="authUser.instruction"> </ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input type="password"  [(ngModel)]="authUser.password"> </ion-input>
+          </ion-item>
+        
+          <div align='center'>
+            <ion-button size="medium" expand="block" fill="outline" (click)="updateProfile()">Update Profile</ion-button>
+          </div>
+          
+          <div align='center'>
+            <ion-button size="medium" expand="block" fill="outline" (click)="navBackToProfile()">Back to Profile</ion-button>
+          </div>
+        
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 </ion-content>
+

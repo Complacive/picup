@@ -10,7 +10,8 @@ import { User } from './user';
 
 @NgModule({
   declarations: [
-    Cart, Checkout, Merchant, Order, Product, User
+    //Cart, 
+    Checkout, Merchant, Order, Product, User
   ],
 
   imports: [
@@ -18,7 +19,8 @@ import { User } from './user';
   ],
   
   exports: [
-    Cart, Checkout, Merchant, Order, Product, User
+    //Cart, 
+    Checkout, Merchant, Order, Product, User
   ]
 })
 export class ModelsModule { }

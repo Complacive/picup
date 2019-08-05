@@ -1,94 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-
-      <ion-buttons slot = "start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-
-    <ion-title>product-info</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-
-<ion-menu contentId = "content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>
-          Menu
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
-   
-    <ion-router-outlet id = "content" main></ion-router-outlet>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Product Info
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
   
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle auto-hide = "false" *ngFor = "let p of pages">
-          <ion-item [routerLink] = "p.url" routerDirection = "root" [class.active-item] = "selectedPath === p.url">
-            {{ p.title }}
-          </ion-item>
-  
-        </ion-menu-toggle>
-      </ion-list>
-     
-    </ion-content>
-  
-  </ion-menu>
-  
-
-<<<<<<< HEAD
   <ion-content>
-      <ion-grid>
-          <ion-row>
-            <ion-col size-md="6" offset-md="3">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+
+              <!-- <ion-card>
+
+                <ion-card-header>
+                  <ion-card-title>{{ product.name }}</ion-card-title>
+                </ion-card-header>
+
+                <ion-img src]="loadedProducts[0].imageUrl"></ion-img>
+                <p> {{ products.description }}</p>
+
+                <ion-item>
+                    <p> {{ product.size }} | {{ loadedProducts.weight }} </p>
+                </ion-item>
+
+                <ion-item>
+                    <p> {{ products.price | currency}} </p>
+                </ion-item>
+
+                <ion-button slot="end" padding fill="outline" float-right href='/product-info'>Add to cart</ion-button>
               
-                <!-- place code inside here -->
-                
-              </ion-col>
-            </ion-row>
-        </ion-grid>
+              </ion-card> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
-=======
-<ion-content>
-  <ion-app>
-    <ion-header translucent>
-      <ion-toolbar>
-        <ion-title>Gas from Gas Friends</ion-title>
-      </ion-toolbar>
-    </ion-header>,
-    <ion-content >
-      <ion-card>
-        <img src="https://cdn0.iconfinder.com/data/icons/expenses-vs-income/30/__gas_fuel_station_car-256.png" />
-        <ion-card-header>
-          <ion-card-subtitle>5kg</ion-card-subtitle>
-          <ion-card-title>R30</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          This gas is 5kg and costs R30 
-        </ion-card-content>
-
-        <img src="https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-1/135/_Canister_Egg-256.png" />
-        <ion-card-header>
-          <ion-card-subtitle>15kg</ion-card-subtitle>
-          <ion-card-title>R50</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          This gas is 15kg and costs R50
-        </ion-card-content>
-
-        <img src="https://cdn3.iconfinder.com/data/icons/eco-flat-2/512/gas_oil_station_petrol-256.png" />
-        <ion-card-header>
-          <ion-card-subtitle>25kg</ion-card-subtitle>
-          <ion-card-title>R75</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          This gas is 25kg and costs R75
-        </ion-card-content>
-      </ion-card>
-    </ion-content>
-  </ion-app>
- 
-</ion-content>
-<ion-button href ="/cart "  color ="success" size="medium" expand="block" (click)="GotoCart()">Add to cart</ion-button>
-
->>>>>>> c122f958f60bf1ea9682c0926dc683bf9097d145

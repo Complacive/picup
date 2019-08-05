@@ -24,14 +24,12 @@
                 <p margin> {{ item.description }}</p>
               
                 <ion-item>
-                    <ion-button slot="end" fill=clear (click)="incrementQty()"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
-                    <ion-button slot="end" fill=clear (click)="decrementQty()"><ion-icon name="remove-circle-outline"></ion-icon></ion-button>      
+                    <ion-button slot="end" fill=clear ><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+                    <ion-button slot="end" fill=clear ><ion-icon name="remove-circle-outline"></ion-icon></ion-button>      
                 </ion-item>
               
               </ion-card>
             </ion-item>
-            
-  
           </ion-list>
         </ion-col>
       </ion-row>
@@ -39,7 +37,7 @@
       <ion-row>
         <ion-col size-md="6" offset-md="3">
   
-          <ion-button margin> CHACKOUT</ion-button>
+          <ion-button fill="outline" margin> CHACKOUT</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

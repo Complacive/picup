@@ -11,7 +11,7 @@ export class ProductService {
 
   get(id: number) {
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/api/product',
+      this.http.get('http://localhost:5000/api/product',
         { params: new HttpParams().set('id', id + '') })
         .subscribe((response) => {
           resolve(response);
@@ -23,7 +23,7 @@ export class ProductService {
 
   update(product: Product) {
     return new Promise((resolve, reject) => {
-      this.http.post('http://localhost:3000/api/product/update', product)
+      this.http.post('http://localhost:5000/api/product/update', product)
       .subscribe((response) => {
         resolve(response);
       }, (err) => {
