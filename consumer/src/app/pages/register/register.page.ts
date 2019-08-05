@@ -20,6 +20,7 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
   }
+  
 
   navToLogin() {
     this.navCtrl.navigateBack('login');

@@ -11,23 +11,30 @@
 
 
 <ion-content>
-<<<<<<< HEAD
-    <ion-grid>
+  <ion-grid>
     <ion-row>
-        <ion-col size-md="6" offset-md="3">
-            <ion-card>
-                <ion-card-content>
-                    <div class="card_content">
-                        <ion-thumbnail slot="start">
-                            <ion-img src='https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-1/135/_Canister_Egg-256.png'></ion-img>
-                        </ion-thumbnail>
-                        <div>
-                            <ion-label>Price</ion-label>
-                        </div>
-                    </div>
-                </ion-card-content>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+            <ion-card-content>
+                    
+            <ion-list *ngIf="resultCart">
+                <ion-item button *ngFor="let item of resultCart" [routerLink]=" ['/', 'cart', item._id]">
+                    <ion-label text-wrap>
+                       <h3>{{item.item_name}}</h3>
+                       {{item.total_price}}
+                    </ion-label>
+                <h2>{{item.quantity}}</h2>
+                </ion-item>
+            </ion-list>
+            
+    <div>Total: R{{totalPrice}}</div>
+                
+
+</ion-card-content>
             </ion-card>
         </ion-col>
+        
+        
         </ion-row>
         <ion-row>
             <ion-col>
@@ -37,17 +44,4 @@
     </ion-grid>
 </ion-content>
 
-=======
-    <ion-list *ngIf="resultCart">
-        <ion-item button *ngFor="let item of resultCart" [routerLink]=" ['/', 'cart', item._id]">
-            <ion-label text-wrap>
-                <h3>{{item.item_name}}</h3>
-                {{item.total_price}}
-            </ion-label>
-            <h2>{{item.quantity}}</h2>
-        </ion-item>
 
-    </ion-list>
-    <div>Total: R{{totalPrice}}</div>
-</ion-content>
->>>>>>> c122f958f60bf1ea9682c0926dc683bf9097d145
