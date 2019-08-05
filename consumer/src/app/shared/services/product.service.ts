@@ -9,10 +9,20 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  get(id: number) {
+  getAll() {
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:5000/api/product',
-        { params: new HttpParams().set('id', id + '') })
+      this.http.get('http://localhost:5000/api/product/getAll')
+        .subscribe((response) => {
+          resolve(response);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  getById(id: number) {
+    return new Promise((resolve, reject) => {
+      this.http.post('http://localhost:5000/api/product/getById', { 'id': id })
         .subscribe((response) => {
           resolve(response);
         }, (err) => {

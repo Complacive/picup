@@ -1,8 +1,6 @@
 var mysqlConn = require("../database/database");
 
-var Product = function (product) {
-
-}
+var Product = function (product) {}
 
 Product.create = function (newProduct) {
     return new Promise((resolve, reject) => {
@@ -14,6 +12,18 @@ Product.create = function (newProduct) {
             }
         });
     });
+}
+
+Product.get = function () {
+    return new Promise((resolve, reject) => {
+        mysqlConn.query("Select * from product", (err, res) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(res);
+            }
+        });
+    })
 }
 
 Product.getById = function (id) {
