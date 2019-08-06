@@ -18,9 +18,9 @@ export class CartItemPage implements OnInit {
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.cartService.getProduct(id).subscribe(result => {
-      this.productInfo = result;
-    });
+    // this.cartService.getProduct(id).subscribe(result => {
+    //   this.productInfo = result;
+    // });
   }
 
 }
