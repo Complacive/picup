@@ -15,6 +15,17 @@ module.exports = class ProductService {
             });
         }
 
+        getAll() {
+            return new Promise((resolve, reject) => {
+                Product.get()
+                    .then(result => {
+                        resolve(result);
+                    }).catch(err => {
+                        reject(err);
+                    })
+            })
+        }
+
         getById(id) {
             return new Promise((resolve, reject) => {
                 Product.getById(id)

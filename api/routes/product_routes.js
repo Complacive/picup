@@ -16,6 +16,15 @@ router.post("/create", (req, res) => {
         })
 })
 
+router.get("/getAll", (req, res) => {
+    productService.getAll()
+        .then(result => {
+            res.send(result);
+        }).catch(err => {
+            res.status(400).send(err);
+        })
+})
+
 router.post("/getById", (req, res) => {
     productService.getById(req.body.id)
         .then(result => {
@@ -51,6 +60,5 @@ router.post("/delete", (req, res) => {
             res.status(400).send(err);
         })
 })
-
 
 module.exports = router;

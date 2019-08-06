@@ -20,8 +20,10 @@ export class HomePage implements OnInit {
     // this.loadedProducts = this.productService.product;
     this.productService.getAll()
     .then((response: Array<any>) => {
-      this.loadedProducts=response;
-    })
+      this.loadedProducts = response;
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
 
