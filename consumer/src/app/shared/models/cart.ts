@@ -4,9 +4,10 @@ export class Cart {
 
     private static instance: Cart = null;
 
+    //0 = ProductId, 1 = Quantity
     private cartItems: number[][] = [];
 
-    private constructor() { }
+    public constructor() { }
 
     public static getInstance(): Cart {
         if (Cart.instance == null) {
@@ -15,6 +16,7 @@ export class Cart {
         return Cart.instance;
     }
 
+    //Update a specific item in the cart
     public update(product_id: number, num_product: number) {
 
         let found: boolean = false;

@@ -26,7 +26,8 @@ export class CartService {
   }
 
   getCart() {
-    return this.http.get('http://localhost:6063/api/cart');
+    // return this.http.get('http://localhost:6063/api/cart');
+    return this.cart;
   }
 
   getProduct(id){
