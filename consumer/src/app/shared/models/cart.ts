@@ -6,7 +6,7 @@ export class Cart {
 
     private cartItems: number[][] = [];
 
-    private constructor() { }
+    public constructor() { }
 
     public static getInstance(): Cart {
         if (Cart.instance == null) {
