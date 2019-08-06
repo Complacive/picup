@@ -10,6 +10,7 @@ const local = {
     database: "picup_app"
 };
 
+// heroku credentials
 const config = {
     host: "us-cdbr-iron-east-02.cleardb.net",
     port: 3306,
