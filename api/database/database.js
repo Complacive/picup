@@ -19,7 +19,7 @@ const config = {
     database: "heroku_fcb985ff8a841f0"
 };
 
-var connection = mysql.createConnection(config);
+var connection = mysql.createConnection(local);
 connection.connect(function (err) {
     if (err) console.log(err);
     console.log("Database Connected: " + config.host + ":" + config.port);
