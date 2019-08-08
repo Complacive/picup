@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const orderService = require('../services/order_service');
+const Order = require('../models/order_model');
 
+// string concatonate '/'
 router.get('/get', function (req, res) {
-    orderService.getOrders()
+    Order.prototype
+        .get()
         .then(orders => {
             res.send(orders);
         })
@@ -13,34 +15,49 @@ router.get('/get', function (req, res) {
         });
 });
 
-router.post('/get/id', function (req, res) {
-    orderService.getOrderById(req.body.id)
-    .then(order => {
-        res.send(order);
-    })
-    .catch(err => {
-        res.status(400).send(err);
-    })
-})
-
-router.post('/get/userid', function (req, res) {
-    orderService.getOrdersByUserId(req.body.id)
-    .then(orders => {
-        res.send(orders)
-    })
-    .catch(err => {
-        res.status(400).send(err);
-    })
-})
-
 router.post('/create', function (req, res) {
-    orderService.createOrder(req.body)
-    .then(id => {
-        res.send(id)
-    })
-    .catch(err => {
-        res.status(400).send(err);
-    })
-})
+    Order.prototype
+        .create(req.body)
+        .then(users => {
+            res.send(users);
+        })
+        .catch(err => { 
+            res.status(400).send(err);
+        })
+});
+
+router.post('/getById', function (req, res) {
+    Order.prototype
+        .getById(req.body.id)
+        .then(users => {
+            res.send(users);
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        });
+});
+
+router.post('/getByUserId', function (req, res) {
+    Order.prototype
+        .getByUserId(req.body.user_id)
+        .then(users => {
+            res.send(users);
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        });
+});
+
+
+router.post('/removeById', function (req, res) {
+    Order.prototype
+        .removeById(req.body.id)
+        .then(users => {
+            res.send(users);
+        })
+        .catch(err => {
+            res.status(400).send(err);
+        })
+});
 
 module.exports = router;
