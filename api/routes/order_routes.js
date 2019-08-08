@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const orderService = require('../services/order_service');
+const OS = require('../services/order_service');
+const orderService = new OS();
 
 router.get('/get', function (req, res) {
     orderService.getOrders()

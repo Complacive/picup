@@ -1,6 +1,7 @@
 var Order = require("../models/order_model");
 
 module.exports = class OrderService {
+
     constructor() { }
 
     getOrders() {
