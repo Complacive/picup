@@ -29,7 +29,7 @@ module.exports = class Order {
     create(newOrder) {
         //console.log(newUser);
         return new Promise((resolve, reject) => {
-            mysqlConn.query("INSERT INTO `order` set ?", newOrder, function(err, res) {
+            mysqlConn.query("INSERT INTO `order` set ?", newOrder, function (err, res) {
                 if (err) {
                     reject(err);
                 } else {
@@ -38,48 +38,50 @@ module.exports = class Order {
             });
         });
     };
+
 
     getById(orderId) {
         return new Promise((resolve, reject) => {
-            mysqlConn.query("Select * from `order` where id = ? ", orderId, function(
-                err,
-                res
-            ) {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(res);
-                }
+                mysqlConn.query("Select * from `order` where id = ? ", orderId, function (
+                    err,
+                    res
+                ) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(res);
+                    }
+                });
+            })
+        };
+
+
+
+            getByUserId(userId) {
+                return new Promise((resolve, reject) => {
+                    mysqlConn.query("Select * from `order` where user_id = ? ", userId, function (
+                        err,
+                        res
+                    ) {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(res);
+                        }
+                    });
+                });
+            };
+
+
+        removeById(orderId) {
+            return new Promise((resolve, reject) => {
+                mysqlConn.query("DELETE FROM `order` WHERE id = ?", orderId, function (err, res) {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(res);
+                    }
+                });
             });
-        });
-    };
-
-    getByUserId(userId) {
-        return new Promise((resolve, reject) => {
-            mysqlConn.query("Select * from `order` where user_id = ? ", userId, function(
-                err,
-                res
-            ) {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(res);
-                }
-            });
-        });
-    };
-
-    removeById(orderId) {
-        return new Promise((resolve, reject) => {
-            mysqlConn.query("DELETE FROM `order` WHERE id = ?", orderId, function(err, res) {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(res);
-                }
-            });
-        });
-    };
-
-
+        };
 }
